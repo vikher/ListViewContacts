@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ListViewContacts.Views.MyListPage">
+    <ContentPage.Content>
+        <StackLayout Padding="10,0,10,0">
+            <ListView  ItemsSource="{Binding MyListCollector}" IsPullToRefreshEnabled="True"  x:Name="EmployeeListView" HasUnevenRows="true" SeparatorVisibility="Default" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <Image Source="{Binding Image}" HeightRequest="50" WidthRequest="50"  />
+                                <StackLayout HorizontalOptions="StartAndExpand">
+                                    <Label Text="{Binding MyName}"
+                                       FontAttributes="Bold" />
+                                    <Label Text="{Binding MyDetail}"
+                                       TextColor="Gray" />
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
